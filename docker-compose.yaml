@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: bio_viaarto_dev  # Nome personalizado para o container
+    image: nginx:latest
+    ports:
+      - "8102:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./docs:/usr/share/nginx/html
+    restart: always
